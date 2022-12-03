@@ -2,7 +2,8 @@ package me.xtrm.aoc2022.days
 
 import me.xtrm.aoc2022.getInput
 
-@Suppress("unused") // it is used you fuckwit
+// Part 2 toggle
+@Suppress("unused")
 internal const val correctGuide = true
 
 fun main() {
