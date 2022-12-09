@@ -2,7 +2,7 @@ package me.xtrm.aoc2022.days
 
 import me.xtrm.aoc2022.getInput
 
-data class AOCFile(
+private data class AOCFile(
     val name: String,
     val size: Int,
     val dir: Boolean,
@@ -10,12 +10,6 @@ data class AOCFile(
     val parent: AOCFile? = null,
 ) {
     fun totalSize(): Int = size + children.sumOf { it.totalSize() }
-
-    fun find(name: String): AOCFile? {
-        if (name == "..") return parent
-        if (this.name == name) return this
-        return children.firstNotNullOfOrNull { it.find(name) }
-    }
 
     fun all(): List<AOCFile> = children + children.flatMap { it.all() }
 
